@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('title')
-{{$comic['title']}}
+    {{ $comic['title'] }}
 @endsection
 
 @section('content')
@@ -19,9 +19,9 @@
                 <h1>{{ $comic->title }}</h1>
             </div>
             <div class="price fw-bold px-5">
-                U.S. Price: {{ $comic->price}}$
+                U.S. Price: {{ number_format($comic->price, 2, ',', '.') }}$
             </div>
-            <p class="text-center">{{ $comic->description}}</p>
+            <p class="text-center">{{ $comic->description }}</p>
         </div>
 
         <div class="container info-scomic mt-4 mb-5">
@@ -35,7 +35,7 @@
                             <h6>Art by:</h6>
                         </div>
                         <div class="sub-content bmg1 col-7  py-3">
-                           {{$comic->artists}}
+                            {{ $comic->artists }}
                         </div>
                     </div>
                     <div class="written-by bmg1 row">
@@ -43,7 +43,7 @@
                             <h6>Written by:</h6>
                         </div>
                         <div class="sub-content py-3 col-7">
-                           {{$comic->writers}}
+                            {{ $comic->writers }}
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
                             <h6>Series</h6>
                         </div>
                         <div class="sub-content bmg1 py-3 col-7">
-                           {{$comic->series}}
+                            {{ $comic->series }}
                         </div>
                     </div>
                     <div class="price-is  bmg1 row">
@@ -67,7 +67,7 @@
                             <h6>U.S Price:</h6>
                         </div>
                         <div class="sub-content py-3 col-7">
-                            {{$comic->price}}$
+                            {{ number_format($comic->price, 2, ',', '.') }}$
                         </div>
                     </div>
                     <div class="sale-date  row">
@@ -75,7 +75,7 @@
                             <h6>On sale date:</h6>
                         </div>
                         <div class="sub-content py-3 bmg1 col-7">
-                            {{$comic->sale_date}}
+                            {{ $comic->sale_date }}
                         </div>
                     </div>
 
@@ -85,5 +85,4 @@
 
             </div>
     </main>
-
 @endsection
