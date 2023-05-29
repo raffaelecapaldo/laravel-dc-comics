@@ -41,11 +41,11 @@
                     @foreach ($dcItems as $dcItem)
                         <div class="itemdc text-white">
                             <!-- itemdc -->
-                            <img class="@if ($dcItem->text === 'Comic Shop Locator') smalldc
+                            <img class="@if ($dcItem['text'] === 'Comic Shop Locator') smalldc
                     @else
                       '' @endif"
-                                src="{{ $dcItem->image }}" :alt="{{ $dcItem->text }}">
-                            <span class="ms-3 text-uppercase">{{ $dcItem->text }}</span>
+                                src="{{ $dcItem['image'] }}" :alt="{{ $dcItem['text'] }}">
+                            <span class="ms-3 text-uppercase">{{ $dcItem['text'] }}</span>
                         </div>
                     @endforeach
 
