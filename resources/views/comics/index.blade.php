@@ -17,7 +17,7 @@
                     @foreach ($comicCards as $comicCard)
                         <div class="col-xxl-2 col5 col-lg-3 col-md-4 col-sm-6 col-12  d-flex d-sm-block justify-content-center align-items-center col-comic">
                             <div class="comic-card mt-3 d-flex flex-column justify-content-center align-items-center d-sm-block">
-                                <a href="{{route('comics', ['id' => $loop->index])}}">
+                                <a href="{{route('comics.show', ['comic' => $comicCard->id])}}">
                                 <img class="cover" src="{{ $comicCard['thumb'] }}" alt="{{ $comicCard['title'] }}">
                                 <div class="text-cover text-center text-sm-start">
                                     <p class="text-uppercase mt-3 ">{{ $comicCard['title'] }}</p>

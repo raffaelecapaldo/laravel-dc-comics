@@ -14,7 +14,13 @@ class ComicController extends Controller
      */
     public function index()
     {
-        return view('comics.index');
+        $data = [
+            'navlinks' => config('extradb.navlinks'),
+            'dcItems' => config('extradb.dcitems'),
+            'footerLinks' => config('extradb.footerlinks'),
+            'comicCards' => Comic::all()
+        ];
+        return view('comics.index', $data);
     }
 
     /**
