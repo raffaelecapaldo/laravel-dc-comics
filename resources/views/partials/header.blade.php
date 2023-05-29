@@ -3,14 +3,40 @@
       <img src="/img/dc-logo.png" alt="Logo DC">
     </div>
     <nav>
-      <ul class="d-flex gap-3 ">
-        @foreach ($navlinks as $navlinks)
-        <a href="{{$navlinks['url']}}">
-            <li>{{ $navlinks['text'] }}</li>
-          </a>
-        @endforeach
+        <ul class="d-flex gap-3 ">
+            <a href="#">
+        <li>Characters</li>
+      </a>
+            <a href="{{route('comics.index')}}">
+        <li>Comics</li>
+      </a>
+            <a href="#">
+        <li>Movies</li>
+      </a>
+            <a href="#">
+        <li>Tv</li>
+      </a>
+            <a href="#">
+        <li>Games</li>
+      </a>
+            <a href="#">
+        <li>Collectibles</li>
+      </a>
+            <a href="#">
+        <li>Videos</li>
+      </a>
+            <a href="#">
+        <li>Fans</li>
+      </a>
+            <a href="#">
+        <li>News</li>
+      </a>
+            <a href="{{route('comics.create')}}">
+        <li>Admin</li>
+      </a>
 
-      </ul>
+  </ul>
+
     </nav>
   </header>
 

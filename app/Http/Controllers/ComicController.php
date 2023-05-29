@@ -15,7 +15,6 @@ class ComicController extends Controller
     public function index()
     {
         $data = [
-            'navlinks' => config('extradb.navlinks'),
             'dcItems' => config('extradb.dcitems'),
             'footerLinks' => config('extradb.footerlinks'),
             'comicCards' => Comic::all()
@@ -31,7 +30,6 @@ class ComicController extends Controller
     public function create()
     {
         $data = [
-            'navlinks' => config('extradb.navlinks'),
             'dcItems' => config('extradb.dcitems'),
             'footerLinks' => config('extradb.footerlinks'),
         ];
@@ -46,7 +44,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comic = $request->all();
+        $newComic = new Comic();
+        $newComic->fill($comic);
+        $newComic->save();
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
@@ -58,7 +60,6 @@ class ComicController extends Controller
     public function show(Comic $comic)
     {
         $data = [
-            'navlinks' => config('extradb.navlinks'),
             'dcItems' => config('extradb.dcitems'),
             'footerLinks' => config('extradb.footerlinks'),
             'comic' => $comic
