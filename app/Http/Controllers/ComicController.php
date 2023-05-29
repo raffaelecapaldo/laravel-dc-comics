@@ -52,7 +52,14 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        $data = [
+            'navlinks' => config('extradb.navlinks'),
+            'dcItems' => config('extradb.dcitems'),
+            'footerLinks' => config('extradb.footerlinks'),
+            'comic' => $comic
+        ];
+        return view('comics.show', $data);
+
     }
 
     /**

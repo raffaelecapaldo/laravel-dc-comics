@@ -19,7 +19,7 @@
                 <h1>{{ $comic['title'] }}</h1>
             </div>
             <div class="price fw-bold px-5">
-                U.S. Price: {{ $comic['price'] }}
+                U.S. Price: {{ $comic['price']}}$
             </div>
             <p class="text-center">{{ $comic['description'] }}</p>
         </div>
@@ -35,14 +35,7 @@
                             <h6>Art by:</h6>
                         </div>
                         <div class="sub-content bmg1 col-7  py-3">
-                            @foreach ($comic['artists'] as $artist)
-                            <span> {{$artist}}, </span>
-                            @if ($loop->last)
-                            <span> {{$artist}}. </span>
-
-                            @endif
-
-                            @endforeach
+                           {{$comic->artists}}
                         </div>
                     </div>
                     <div class="written-by bmg1 row">
@@ -50,14 +43,7 @@
                             <h6>Written by:</h6>
                         </div>
                         <div class="sub-content py-3 col-7">
-                            @foreach ($comic['writers'] as $writer)
-                            <span> {{$writer}}, </span>
-                            @if ($loop->last)
-                            <span> {{$writer}}. </span>
-
-                            @endif
-
-                            @endforeach
+                           {{$comic->writers}}
                         </div>
                     </div>
 
