@@ -35,7 +35,7 @@
                 <div class="row mb-3">
                     <div class="col-6">
                         <label for="type" class="form-label">Type</label>
-                        <input required value="{{ $comic->type }}"name="type" type="text" class="form-control"
+                        <input required value="{{ $comic->type }}" name="type" type="text" class="form-control"
                             id="type">
                     </div>
                     <div class="col-6">
@@ -59,7 +59,7 @@
                 <div class="row mb-3 ">
                     <div class="col-6">
                         <label for="series" class="form-label text-center">Series</label>
-                        <input name="series" value="{{ $comic->series }}" required name="series"
+                        <input value="{{ $comic->series }}" required name="series"
                             type="text"class="form-control" id="series">
                     </div>
                     <div class="col-6 ">
@@ -71,8 +71,7 @@
                 <div class="row mb-3">
                     <div class="col-12">
                         <label for="writers" class="form-label">Description</label>
-                        <textarea name="description" required placeholder="A description for the comic" name="writers" type="text"
-                            class="form-control" id="writers">{{ $comic->description }}</textarea>
+                        <textarea name="description" required placeholder="A description for the comic" name="writers" type="text" class="form-control">{{ $comic->description }}</textarea>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3 gap-3">
@@ -82,7 +81,6 @@
 
                 </div>
             </form>
-        </div>
         </div>
 
     </main>

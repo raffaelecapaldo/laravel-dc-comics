@@ -18,7 +18,7 @@
                                 <h3 class="fw-bold fs-5 text-uppercase mt-3">{{ $item['title'] }}</h3>
                                 <ul>
                                     @foreach ($item['links'] as $link)
-                                        <a class="small" :href="{{ $link['url'] }}">
+                                        <a class="small" href="{{ $link['url'] }}">
                                             <li>{{ $link['text'] }}</li>
                                         </a>
                                     @endforeach
