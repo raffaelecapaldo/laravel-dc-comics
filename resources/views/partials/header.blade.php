@@ -31,7 +31,7 @@
             <a href="#">
         <li>News</li>
       </a>
-            <a href="{{route('comics.create')}}">
+            <a href="{{route('admin.panel')}}">
         <li>Admin</li>
       </a>
 
