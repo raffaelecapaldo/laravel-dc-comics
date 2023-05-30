@@ -7,7 +7,9 @@
             <a href="#">
         <li>Characters</li>
       </a>
-            <a href="{{route('comics.index')}}">
+            <a class="@if (url()->current() === route('comics.index'))
+                activelink
+            @endif" href="{{route('comics.index')}}">
         <li>Comics</li>
       </a>
             <a href="#">
@@ -31,7 +33,9 @@
             <a href="#">
         <li>News</li>
       </a>
-            <a href="{{route('admin.panel')}}">
+            <a class="@if (url()->current() === route('admin.panel'))
+                activelink
+            @endif" href="{{route('admin.panel')}}">
         <li>Admin</li>
       </a>
 

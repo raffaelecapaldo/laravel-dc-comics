@@ -12,13 +12,19 @@ nav {
         text-transform: uppercase;
 
         &:hover {
-            text-underline-offset: 63px;
-            text-decoration: underline 6px $primary-color;
-            color: $primary-color;
+            text-underline-offset: 63px!important;
+            text-decoration: underline 6px $primary-color!important;
+            color: $primary-color!important;
         }
     }
 }
 
+
+.activelink {
+    text-underline-offset: 63px!important;
+    text-decoration: underline 6px $primary-color!important;
+    color: $primary-color!important;
+}
 .footer-nav {
     background-image: url("/img/footer-bg.jpg");
 
