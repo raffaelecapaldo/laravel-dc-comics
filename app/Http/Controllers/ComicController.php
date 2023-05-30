@@ -48,7 +48,7 @@ class ComicController extends Controller
         $newComic = new Comic();
         $newComic->fill($comic);
         $newComic->save();
-        return redirect()->route('comics.show', $newComic->id);
+        return redirect()->route('admin.panel');
     }
 
     /**
@@ -95,7 +95,7 @@ class ComicController extends Controller
     {
         $formData = $request->all();
         $comic->update($formData);
-        return redirect()->route('comics.show', $comic->id);
+        return redirect()->route('admin.panel')->with('message', "Comics with id: {$comic->id} has been updated");
     }
 
     /**
@@ -107,5 +107,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
+        return redirect()->route('admin.panel')->with('message', "Comics with id: {$comic->id} has been deleted");
     }
 }
