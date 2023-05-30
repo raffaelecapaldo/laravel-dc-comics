@@ -76,7 +76,12 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        $data = [
+            'dcItems' => config('extradb.dcitems'),
+            'footerLinks' => config('extradb.footerlinks'),
+            'comic' => $comic];
+        return view('comics.edit', $data);
+
     }
 
     /**
@@ -88,7 +93,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $formData = $request->all();
+        $comic->update($formData);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
