@@ -19,5 +19,3 @@ Route::resource('comics', ComicController::class);
 Route::get('/admin', [AdminController::class, 'panel'])->name('admin.panel');
 
 Route::redirect('/', '/comics');
-
-

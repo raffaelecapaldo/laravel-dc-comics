@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Comic;
+use Illuminate\Database\Seeder;
 
 class ComicSeeder extends Seeder
 {
@@ -30,18 +29,19 @@ class ComicSeeder extends Seeder
                 if ($key === count($comic['artists']) - 1) {
                     $newComic->artists .= $artist;
                 } else {
-                    $newComic->artists .= $artist . ', ';
+                    $newComic->artists .= $artist.', ';
                 }
             }
 
-        foreach ($comic['writers'] as $key => $writer) {
-            if ($key === count($comic['writers']) - 1) {
-                $newComic->writers .= $writer;
-            } else {
-                $newComic->writers .= $writer . ', ';
+            foreach ($comic['writers'] as $key => $writer) {
+                if ($key === count($comic['writers']) - 1) {
+                    $newComic->writers .= $writer;
+                } else {
+                    $newComic->writers .= $writer.', ';
+                }
             }
-        }
 
-        $newComic->save();
-    }}
+            $newComic->save();
+        }
+    }
 }

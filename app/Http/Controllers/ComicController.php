@@ -17,8 +17,9 @@ class ComicController extends Controller
         $data = [
             'dcItems' => config('extradb.dcitems'),
             'footerLinks' => config('extradb.footerlinks'),
-            'comicCards' => Comic::all()
+            'comicCards' => Comic::all(),
         ];
+
         return view('comics.index', $data);
     }
 
@@ -33,13 +34,13 @@ class ComicController extends Controller
             'dcItems' => config('extradb.dcitems'),
             'footerLinks' => config('extradb.footerlinks'),
         ];
+
         return view('comics.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,13 +49,13 @@ class ComicController extends Controller
         $newComic = new Comic();
         $newComic->fill($comic);
         $newComic->save();
+
         return redirect()->route('admin.panel');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
@@ -62,8 +63,9 @@ class ComicController extends Controller
         $data = [
             'dcItems' => config('extradb.dcitems'),
             'footerLinks' => config('extradb.footerlinks'),
-            'comic' => $comic
+            'comic' => $comic,
         ];
+
         return view('comics.show', $data);
 
     }
@@ -71,7 +73,6 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function edit(Comic $comic)
@@ -80,6 +81,7 @@ class ComicController extends Controller
             'dcItems' => config('extradb.dcitems'),
             'footerLinks' => config('extradb.footerlinks'),
             'comic' => $comic];
+
         return view('comics.edit', $data);
 
     }
@@ -87,26 +89,25 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comic $comic)
     {
         $formData = $request->all();
         $comic->update($formData);
+
         return redirect()->route('admin.panel')->with('message', "Comics with id: {$comic->id} has been updated");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function destroy(Comic $comic)
     {
         $comic->delete();
+
         return redirect()->route('admin.panel')->with('message', "Comics with id: {$comic->id} has been deleted");
     }
 }

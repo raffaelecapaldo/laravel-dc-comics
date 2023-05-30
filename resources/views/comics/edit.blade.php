@@ -64,14 +64,14 @@
                     </div>
                     <div class="col-6 ">
                         <label for="price" class="form-label text-center">Price</label>
-                        <input name="price" value="{{ $comic->price }}" required name="price" type="number"
+                        <input name="price" value="{{ $comic->price }}" required  type="number"
                             min="0.01" max="90000" step="0.01" class="form-control" id="price">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-12">
                         <label for="writers" class="form-label">Description</label>
-                        <textarea name="description" required placeholder="A description for the comic" name="writers" type="text" class="form-control">{{ $comic->description }}</textarea>
+                        <textarea name="description" required placeholder="A description for the comic" type="text" class="form-control">{{ $comic->description }}</textarea>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3 gap-3">
