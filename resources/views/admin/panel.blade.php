@@ -59,7 +59,7 @@
                                     @endif
                                 </td>
                                 <td><img class="img-fluid" src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
-                                <td>{{ $comic->price }}$</td>
+                                <td style="white-space:nowrap">{{ number_format($comic->price, 2, ',', '.')}}$</td>
                                 <td>{{ $comic->series }}</td>
                                 <td style="white-space:nowrap">{{ $comic->sale_date }}</td>
                                 <td>{{ $comic->type }}</td>
