@@ -26,7 +26,8 @@
                     </div>
                     <div class="col-6">
                         <label for="thumb" class="form-label">Image url</label>
-                        <input required name="thumb" type="text" class="form-control" id="thumb">
+                        <input class="form-control" required name="thumb" type="url"
+                             placeholder="https://example.com" pattern="https://.*">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -63,7 +64,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-12">
-                        <label for="writers" class="form-label">Description</label>
+                        <label for="description" class="form-label">Description</label>
                         <textarea name="description" required placeholder="A description for the comic" type="text"
                             class="form-control"></textarea>
                     </div>

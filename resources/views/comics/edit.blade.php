@@ -28,8 +28,8 @@
                     </div>
                     <div class="col-6">
                         <label for="thumb" class="form-label">Image url</label>
-                        <input required value="{{ $comic->thumb }}" name="thumb" type="text" class="form-control"
-                            id="thumb">
+                        <input class="form-control" required value="{{ $comic->thumb }}" name="thumb" type="url"
+                             placeholder="https://example.com" pattern="https://.*">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -59,18 +59,18 @@
                 <div class="row mb-3 ">
                     <div class="col-6">
                         <label for="series" class="form-label text-center">Series</label>
-                        <input value="{{ $comic->series }}" required name="series"
-                            type="text"class="form-control" id="series">
+                        <input value="{{ $comic->series }}" required name="series" type="text"class="form-control"
+                            id="series">
                     </div>
                     <div class="col-6 ">
                         <label for="price" class="form-label text-center">Price</label>
-                        <input name="price" value="{{ $comic->price }}" required  type="number"
-                            min="0.01" max="90000" step="0.01" class="form-control" id="price">
+                        <input name="price" value="{{ $comic->price }}" required type="number" min="0.01"
+                            max="90000" step="0.01" class="form-control" id="price">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-12">
-                        <label for="writers" class="form-label">Description</label>
+                        <label for="description" class="form-label">Description</label>
                         <textarea name="description" required placeholder="A description for the comic" type="text" class="form-control">{{ $comic->description }}</textarea>
                     </div>
                 </div>
