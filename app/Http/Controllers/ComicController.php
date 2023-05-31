@@ -47,7 +47,7 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        $comic = $request->all();
+        $comic = $request->validated();
         $newComic = new Comic();
         $newComic->fill($comic);
         $newComic->save();
@@ -95,7 +95,7 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $formData = $request->all();
+        $formData = $request->validated();
         $comic->update($formData);
 
         return redirect()->route('admin.panel')->with('message', "Comics with id: {$comic->id} has been updated");
